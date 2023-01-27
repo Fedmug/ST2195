@@ -11,6 +11,8 @@ A knowledge base for UoL course "Programming for Data Science"
 * Think about links with different meaning, denote them with specific arrows or hyperlinks
 * Do not forget about links between concepts from the same or different clusters
 * Code snippets should be short, just in a few lines
+* Every concept or function should be provided with characteristic examples
+* Some functions have lots of parameters, try to figure out the most important ones
 
 ### Github
 
