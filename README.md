@@ -3,6 +3,9 @@ A knowledge base for UoL course "Programming for Data Science"
 
 ## General recommendations
 
+* The main goal is to create a handful tool which allow you and your mates (and maybe even the future generations of student) to prepare for the exam.
+* It's quite unlikely that you'll manage to build a good knowledge base on the first try. The more iterations you do, the better resuld you get.
+
 ### Miro
 
 * Be specific, brief and informative
