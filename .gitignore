@@ -2,3 +2,4 @@ ASA/1*.csv
 ASA/2*.csv
 ASA/*.db
 ASA/*.bz2
+.DS_Store
