@@ -1,0 +1,44 @@
+[
+   {
+      "name": "Ronald",
+      "middle": "Aylmer",
+      "surname": "Fisher",
+      "dob": "17/02/1890",
+      "wiki": "https://en.wikipedia.org/wiki/Ronald_Fisher"
+   },
+   {
+      "name": "William",
+      "middle": "Sealy",
+      "surname": "Gosset",
+      "dob": "13/08/1876",
+      "wiki": "https://en.wikipedia.org/wiki/William_Sealy_Gosset"
+   },
+   {
+      "name": "David",
+      "middle": "Roxbee",
+      "surname": "Cox",
+      "dob": "15/07/1924",
+      "wiki": "https://en.wikipedia.org/wiki/David_Cox_(statistician)"
+   },
+   {
+      "name": "Thomas",
+      "middle": null,
+      "surname": "Bayes",
+      "dob": "07/04/1761",
+      "wiki": "https://en.wikipedia.org/wiki/Thomas_Bayes"
+   },
+   {
+      "name": "Karl",
+      "middle": null,
+      "surname": "Pearson",
+      "dob": "27/03/1857",
+      "wiki": "https://en.wikipedia.org/wiki/Karl_Pearson"
+   },
+   {
+      "name": "John",
+      "middle": "Wilder",
+      "surname": "Tukey",
+      "dob": "16/06/1915",
+      "wiki": "https://en.wikipedia.org/wiki/John_Tukey"
+   }
+]

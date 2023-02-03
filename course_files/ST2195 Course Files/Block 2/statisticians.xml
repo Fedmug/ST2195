@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A list of famous statisticians -->
+<records>
+  <statistician>
+    <name>Ronald</name>
+    <middle>Aylmer</middle>
+    <surname>Fisher</surname>
+    <dob>17/02/1890</dob>
+    <wiki>https://en.wikipedia.org/wiki/Ronald_Fisher</wiki>
+  </statistician>
+  <statistician>
+    <name>William</name>
+    <middle>Sealy</middle>
+    <surname>Gosset</surname>
+    <dob>13/08/1876</dob>
+    <wiki>https://en.wikipedia.org/wiki/William_Sealy_Gosset</wiki>
+  </statistician> 
+  <statistician>
+    <name>David</name>
+    <middle>Roxbee</middle>
+    <surname>Cox</surname>
+    <dob>15/07/1924</dob>
+    <wiki>https://en.wikipedia.org/wiki/David_Cox_(statistician)</wiki>
+  </statistician>
+  <statistician>
+    <name>Thomas</name>
+    <middle></middle>
+    <surname>Bayes</surname>
+    <dob>07/04/1761</dob>
+    <wiki>https://en.wikipedia.org/wiki/Thomas_Bayes</wiki>
+  </statistician>
+  <statistician>
+    <name>Karl</name>
+    <middle></middle>
+    <surname>Pearson</surname>
+    <dob>27/03/1857</dob>
+    <wiki>https://en.wikipedia.org/wiki/Karl_Pearson</wiki>
+  </statistician>
+  <statistician>
+    <name>John</name>
+    <middle>Wilder</middle>
+    <surname>Tukey</surname>
+    <dob>16/06/1915</dob>
+    <wiki>https://en.wikipedia.org/wiki/John_Tukey</wiki>
+  </statistician>
+</records>

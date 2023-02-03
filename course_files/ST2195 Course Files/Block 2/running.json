@@ -1,0 +1,101 @@
+[
+  {
+    "timestamp": "2013-06-01 18:40:29",
+    "latitude": 50.8138,
+    "longitude": -1.7126,
+    "altitude": 80.2,
+    "distance": 1805.94,
+    "heart_rate": 133,
+    "speed": 4.0601
+  },
+  {
+    "timestamp": "2013-06-01 18:40:30",
+    "latitude": 50.8138,
+    "longitude": -1.7126,
+    "altitude": 80,
+    "distance": 1810,
+    "heart_rate": 133,
+    "speed": 4.55
+  },
+  {
+    "timestamp": "2013-06-01 18:40:31",
+    "latitude": 50.8139,
+    "longitude": -1.7127,
+    "altitude": 79.8,
+    "distance": 1814.5501,
+    "heart_rate": 133,
+    "speed": 2.98
+  },
+  {
+    "timestamp": "2013-06-01 18:40:32",
+    "latitude": 50.8139,
+    "longitude": -1.7127,
+    "altitude": 79.8,
+    "distance": 1817.53,
+    "heart_rate": 133,
+    "speed": 2.97
+  },
+  {
+    "timestamp": "2013-06-01 18:40:33",
+    "latitude": 50.8139,
+    "longitude": -1.7128,
+    "altitude": 79.6,
+    "distance": 1820.5,
+    "heart_rate": 133,
+    "speed": 3.65
+  },
+  {
+    "timestamp": "2013-06-01 18:40:34",
+    "latitude": 50.8139,
+    "longitude": -1.7128,
+    "altitude": 79.6,
+    "distance": 1824.15,
+    "heart_rate": 133,
+    "speed": 3.23
+  },
+  {
+    "timestamp": "2013-06-01 18:40:35",
+    "latitude": 50.8139,
+    "longitude": -1.7129,
+    "altitude": 79.4,
+    "distance": 1827.38,
+    "heart_rate": 133,
+    "speed": 4.65
+  },
+  {
+    "timestamp": "2013-06-01 18:40:36",
+    "latitude": 50.8139,
+    "longitude": -1.7129,
+    "altitude": 79.4,
+    "distance": 1832.03,
+    "heart_rate": 133,
+    "speed": 4.1499
+  },
+  {
+    "timestamp": "2013-06-01 18:40:37",
+    "latitude": 50.814,
+    "longitude": -1.713,
+    "altitude": 79.2,
+    "distance": 1836.1799,
+    "heart_rate": 133,
+    "speed": 2
+  },
+  {
+    "timestamp": "2013-06-01 18:40:38",
+    "latitude": 50.814,
+    "longitude": -1.713,
+    "altitude": 79.2,
+    "distance": 1838.1799,
+    "heart_rate": 133,
+    "speed": 4.2101
+  },
+  {
+    "timestamp": "2013-06-01 18:40:39",
+    "latitude": 50.814,
+    "longitude": -1.7131,
+    "altitude": 79,
+    "distance": 1842.39,
+    "heart_rate": 133,
+    "speed": 5.1899
+  }
+]

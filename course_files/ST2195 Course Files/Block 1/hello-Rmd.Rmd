@@ -1,0 +1,31 @@
+---
+title: "Hello Rmd"
+author: '[Luke Skywalker](https://en.wikipedia.org/wiki/Luke_Skywalker)'
+date: "21 December 2112"
+---
+
+# My first R Markdown file
+
+After a hard training day with Yoda, I decided to author my first [R
+Markdown](https://rmarkdown.rstudio.com) file. This is a text chunk
+written in *Markdown syntax*. I can write **bold** and *italic*, and
+even record quotes I want to remember like
+
+> *Do. Or do not. There is no try*
+>
+> Yoda, The Empire Strikes Back
+
+I can also ask R to run code and return the result. For example, I can
+ask R to print the quote
+
+```{r quote}
+print("Do. Or do not. There is no try")
+```
+
+I can also do complex arithmetic. For example, if your R installation
+could do infinite arithmetic you could see that `1/81` has all single
+digits numbers from 0 to 9 repeating in its decimal, except 8!
+
+```{r arithmetic}
+print(1/81, 15)
+```
