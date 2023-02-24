@@ -19,6 +19,7 @@ A knowledge base for UoL course "Programming for Data Science"
 
 ### Github
 
+* All long pieces of text or code should be stored in Github, not in Miro
 * Create a branch named after your topic and commit all the stuff into that branch
 * For larger code examples in Python use Jupyter Notebooks, for R use R Markdown
 * Use markdown files for large pieces of non-programming content
