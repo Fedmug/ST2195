@@ -23,3 +23,8 @@ A knowledge base for UoL course "Programming for Data Science"
 * Create a branch named after your topic and commit all the stuff into that branch
 * For larger code examples in Python use Jupyter Notebooks, for R use R Markdown
 * Use markdown files for large pieces of non-programming content
+
+### Deadlines
+
+* -1 point per each week of delay
+* +1 point if you are ready before your deadline
