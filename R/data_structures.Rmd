@@ -1,0 +1,172 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Vectors
+
+## Atomic vectors
+
+Atomic vectors are usually created with `c()`:
+```{r}
+dbl_var <- c(1, 2.5, 4.5)
+# With the L suffix, you get an integer rather than a double 
+int_var <- c(1L, 6L, 10L)
+# Use TRUE and FALSE (or T and F) to create logical vectors 
+log_var <- c(TRUE, FALSE, T, F)
+chr_var <- c("these are", "some strings")
+```
+
+Nested `c()`s are ignored:
+```{r}
+c(1, c(2, c(3, 4)))
+c(1, 2, 3, 4) 
+```
+
+### Types and tests
+
+Given a vector, you can determine its type with `typeof()`, or check if it’s a specific type with an `is` function:
+```{r}
+int_var <- c(1L, 6L, 10L)
+typeof(int_var)
+is.integer(int_var)
+is.atomic(int_var)
+is.numeric(int_var)
+```
+
+```{r}
+dbl_var <- c(1, 2.5, 4.5)
+typeof(dbl_var)
+is.double(dbl_var)
+is.atomic(dbl_var)
+is.numeric(dbl_var)
+```
+
+### Coersion
+
+```{r}
+str(c("a", 1))
+```
+
+When a logical vector is coerced to an integer or double, TRUE becomes 1 and FALSE becomes 0
+```{r}
+x <- c(FALSE, FALSE, TRUE) 
+as.numeric(x)
+sum(x)
+mean(x)
+```
+
+Implicit coersion:
+```{r}
+sin(x)
+typeof(sin(x))
+```
+
+### Lists
+
+Lists are different from atomic vectors because their elements can be of any type, including lists:
+```{r}
+x <- list(1:3, "a", c(TRUE, FALSE, TRUE), c(2.3, 5.9)) 
+str(x)
+```
+
+A list can contain other lists:
+```{r}
+x <- list(list(list(list()))) 
+str(x)
+is.recursive(x)
+```
+
+A data frame is a list:
+```{r}
+str(mtcars)
+is.list(mtcars)
+```
+
+## Attributes
+
+All objects can have arbitrary additional attributes, used to store meta- data about the object. Attributes can be thought of as a named list (with unique names). Attributes can be accessed individually with attr() or all at once (as a list) with attributes().
+
+```{r}
+y <- 1:10
+str(attributes(y))
+attr(y, "my_attribute") <- "This is a vector" 
+attr(y, "my_attribute")
+str(attributes(y))
+```
+
+The `structure()` function returns a new object with modified attributes:
+```{r}
+structure(1:10, my_attribute = "This is a vector")
+```
+
+By default, most attributes are lost when modifying a vector:
+```{r}
+ attributes(y[1])
+ attributes(sum(y))
+```
+
+### Names
+
+Three ways to create names:
+```{r}
+x <- c(a=1,b=2,c=3)
+y <- 1:3; names(y) <- c("a", "b", "c")
+z <- setNames(1:3, c("a", "b", "c"))
+names(z)
+```
+
+## Factors
+
+A factor is a vector that can contain only predefined values, and is used to store categorical data. Note that factors are integers, not strings.
+```{r}
+x <- factor(c("a", "b", "b", "a"))
+x
+class(x)
+levels(x)
+typeof(x)
+```
+
+Factors are useful when you know the possible values a variable may take, even if you don’t see all values in a given dataset.
+```{r}
+sex_char <- c("m", "m", "m")
+sex_factor <- factor(sex_char, levels = c("m", "f"))
+table(sex_factor)
+```
+
+# Matrices and Arrays
+
+Matrices and arrays are created with matrix() and array(), or by using the assignment form of dim():
+```{r}
+a <- matrix(1:6, ncol = 3, nrow = 2)
+b <- array(1:12, c(2, 3, 2))
+c<-1:6
+dim(c) <- c(3, 2) 
+c
+dim(c) <- c(2, 3)
+c
+```
+
+`length()` generalizes to `nrow()` and `ncol()` for matrices, and `dim()` for arrays.
+```{r}
+length(a)
+nrow(a)
+ncol(a)
+length(b)
+dim(b)
+```
+
+`names()` generalizes to `rownames()` and `colnames()` for matrices, and
+`dimnames()`, a list of character vectors, for arrays.
+```{r}
+rownames(a) <- c("A", "B") 
+colnames(a) <- c("a", "b", "c")
+a
+```
+
+```{r}
+dimnames(b) <- list(c("one", "two"), c("a", "b", "c"), c("A", "B"))
+b
+```
+
+

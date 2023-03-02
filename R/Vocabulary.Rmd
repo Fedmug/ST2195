@@ -1,0 +1,356 @@
+---
+title: "Vocabulary"
+output: html_document
+date: "2023-02-23"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Important operators and assignment
+
+### match
+
+`match` returns a vector of the positions of (first) matches of its first argument in its second.
+
+```{r}
+match(c(10, 8, 6, 4, 2), c(9, 2, 3, 5, 7))
+```
+```{r}
+match(c(10, 8, 6, 4, 2, 0), c(7, 5, 3, 2), nomatch=0)
+```
+
+
+`%in%` is a more intuitive interface as a binary operator, which returns a logical vector indicating if there is a match or not for its left operand. %in% is currently defined as 
+`"%in%" <- function(x, table) match(x, table, nomatch = 0) > 0`
+
+```{r}
+1:10 %in% c(1,3,5,9)
+1:10
+```
+Find all characters in a vector of strings:
+```{r}
+sstr <- c("c","ab","B","bba","c",NA,"@","bla","a","Ba","%")
+sstr[sstr %in% c(letters, LETTERS)]
+```
+
+### `head` and `tail`
+
+```{r}
+tail(letters, n = 3)
+```
+
+```{r}
+head(mtcars)
+```
+
+```{r}
+head(freeny.x,  c(6L, 2L))
+```
+
+### `with`
+
+Evaluate an R expression in an environment constructed from data, possibly modifying (a copy of) the original data.
+
+```{r}
+with(mtcars, mpg[cyl == 8  &  disp > 350])
+```
+
+### `assign` and `get`
+
+Assign a value to a name in an environment.
+
+```{r}
+for(i in 1:6) { #-- Create objects  'r.1', 'r.2', ... 'r.6' --
+    nam <- paste("r", i, sep = ".")
+    assign(nam, 1:i)
+}
+ls(pattern = "^r..$")
+```
+
+```{r}
+get("r.3")
+```
+
+##Comparison
+
+### `all.equal`
+
+```{r}
+all.equal(4*atan(1), 3.14159)
+all.equal(4*atan(1), 3.141592654)
+```
+
+
+```{r}
+x1 <- x2 <- (1:100)/10;  x2[2] <- 1.1*x1[2]
+head(x1)
+head(x2)
+all.equal(x1, x2)
+```
+
+### `identical`
+
+The safe and reliable way to test two objects for being exactly equal. It returns TRUE in this case, FALSE in every other case.
+
+```{r}
+identical(1, NULL) ## FALSE -- don't try this with ==
+identical(1, 1.)   ## TRUE in R (both are stored as doubles)
+identical(1, as.integer(1)) ## FALSE, stored as different types
+identical(1, 1L)
+identical(1, TRUE)
+identical(1, "1")
+```
+
+### `is.na`
+
+```{r}
+is.na(c(1, NA))
+```
+
+### `is.finite`
+
+```{r}
+is.finite(c(1/0, 0/1, 1/1, 0/0))
+```
+
+## Basic math
+
+### Power
+
+```{r}
+3 ^ 2
+2 ^ 16
+3 ** 3
+```
+
+### Division and remainder
+
+```{r}
+45 %% 12 # remainder
+45 %/% 12 # integer division
+```
+
+### `signif`
+
+```{r}
+signif(4*atan(1), 5)
+```
+
+### Cumulative functions
+
+```{r}
+cumsum(1:10)
+cumprod(1:10)
+cummin(c(3:1, 2:0, 4:2))
+cummax(c(3:1, 2:0, 4:2))
+```
+
+
+### `range`
+
+`range` returns a vector containing the minimum and maximum of all the given arguments.
+
+```{r}
+range(stats::rnorm(1000))
+```
+
+### Statistics
+
+```{r}
+mean(stats::rnorm(100))
+median(runif(100))
+sd(runif(100))
+var(runif(100))
+```
+
+### `any` and `all`
+
+```{r}
+r = rbinom(10, 5, 0.5)
+r
+all(r)
+any(r == 0)
+```
+
+### `which`
+
+Give the TRUE indices of a logical object, allowing for array indices.
+
+```{r}
+which(LETTERS == "R")
+which((1:12)%%2 == 1)
+```
+
+## Vectors and matrices
+
+### `c` and `matrix`
+
+```{r}
+c(1, 2, 4)
+matrix(1:10, nrow=2)
+```
+
+### `length`, `dim`, `nrow`, `ncol`
+
+```{r}
+m = matrix(-5:2, nrow=4)
+length(m)
+dim(m)
+nrow(m)
+ncol(m)
+```
+
+### `cbind` and `rbind`
+
+```{r}
+rbind(1, 1:7)
+cbind(1:3, 4:6)
+```
+
+### `t`
+
+```{r}
+a <- matrix(1:30, 5, 6)
+a
+t(a)
+```
+
+
+### `diag`
+
+Extract or replace the diagonal of a matrix, or construct a diagonal matrix.
+
+```{r}
+diag(c(1,2,4))
+```
+
+```{r}
+# diag(<var-cov-matrix>) = variances
+corr.matrix = var(M <- cbind(X = 1:10, Y = rnorm(10)))
+corr.matrix
+diag(corr.matrix)
+```
+
+## Making vectors
+
+### `rep` and `rep_len`
+
+`rep` replicates the values in `x`.
+
+```{r}
+rep(1:4, 2)
+rep(1:4, c(2,1,2,1))
+rep_len(letters[1:5], 11)
+```
+
+### `seq`
+
+Generate regular sequences.
+
+```{r}
+seq(0, 1, length.out = 21)
+seq(stats::rnorm(20))
+seq(1, 9, by = 2)
+seq(0, 10, by = pi)
+```
+
+```{r}
+seq_len(5)
+seq_along(c(5, 9, 10, -1))
+```
+
+### `rev`
+
+`rev` provides a reversed version of its argument.
+
+```{r}
+rev(1:7)
+rev(c(1:5, 5:3))
+```
+
+### `sample`
+
+`sample` takes a sample of the specified size from the elements of `x` using either with or without replacement.
+
+```{r}
+x <- 1:12
+sample(x, 7)
+sample(x, 10, replace = TRUE)
+```
+
+### `choose`, `factorial`, `combn`
+
+```{r}
+choose(4, 2)
+factorial(5)
+combn(letters[1:5], 3)
+```
+
+### is/as
+
+```{r}
+as.numeric(c(-1, "2", 3.14, FALSE))
+as.character(c(TRUE, "42", 15, 10L))
+is.logical(c(1 > 0, FALSE, 12))
+```
+
+## Lists and data.frames
+
+## `list` and `unlist`
+
+```{r}
+list(1.2, "34", FALSE, 3L, matrix(1:6, 2, 3))
+```
+
+Given a list structure `x`, `unlist` simplifies it to produce a vector which contains all the atomic components which occur in `x`.
+
+```{r}
+l1 <- list(a = "a", b = 2, c = pi+2i)
+unlist(l1) # a character vector
+```
+
+### `data.frame`
+
+```{r}
+L3 <- LETTERS[1:3]
+char <- sample(L3, 10, replace = TRUE)
+(d <- data.frame(x = 1, y = 1:10, char = char))
+```
+
+```{r}
+n = 43
+if (n %% 2 == 0) {
+  cat("even")
+} else {
+  cat("odd")
+}
+```
+
+```{r}
+for (i in 1:5) {
+  print(i)
+  print(-i)
+}
+```
+
+```{r}
+x <- c(6:-4)
+sqrt(ifelse(x >= 0, x, NA))
+```
+
+```{r}
+require(stats)
+centre <- function(x, type) {
+  switch(type,
+         mean = mean(x),
+         median = median(x),
+         trimmed = mean(x, trim = .1))
+}
+x <- rcauchy(10)
+centre(x, "mean")
+centre(x, "median")
+centre(x, "trimmed")
+```
+
