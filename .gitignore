@@ -3,4 +3,5 @@ ASA/2*.csv
 ASA/*.db
 ASA/*.bz2
 .DS_Store
+/*.DS_Store
 .ipynb_checkpoints/
